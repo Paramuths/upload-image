@@ -1,0 +1,119 @@
+% E. Dunham -- Resume
+% Contents Copyright (C) 2014 - 2016, E. Dunham
+
+% LaTeX code for rendering the resume is distributed under the MIT license.
+% See LICENSE.txt. It means you can use the code for whatever you want,
+% including your own resume, but I'm not liable if it catches your computer on
+% fire.
+
+% Template originally developed by E. Dunham
+% https://github.com/edunham/resume/blob/master/resume.tex
+\usepackage[normalem]{ulem} % for the underlines
+\usepackage[compact]{titlesec} % Shrink default spacings
+\usepackage{tabto} % For aligning skills section
+\usepackage{multicol} % for multicols command
+\usepackage{ragged2e} % for /justify
+\textwidth=7in
+\textheight=10.5in
+\topmargin -1in % Reclaim the default whitespace from top of page
+\oddsidemargin -.25in % Reclaim whitespace on left, make it look centered
+\pagenumbering{gobble} % Don't number pages
+\setlength{\parindent}{0pt} % Don't indent paragraphs
+
+\newcommand{\heading}[1]{
+%    \section*{\centering\uline{\hfill #1 \hfill }} % Center the headings
+    \section*{\uline{\hfill #1 }} % Right-align the headings
+}
+\newcommand{\squish}{
+    \setlength{\parskip}{\whitespaciness pt}
+}
+\newcommand{\when}[1]{ % naming this 'date' would conflict with builtins
+    \typeoffill \textbf{ #1}
+}
+\newcommand{\experience}[3]{ % place, optional title, date
+    \ifx&#2&
+        \item[{#1}]
+    \else
+        \item[{#1}, \emph{#2}]
+    \fi
+    \when{#3}
+}
+
+\newcommand{\position}[2]{
+    \item[\textit{#1}]
+    \hfill \textit{#2}
+}
+
+\newcommand{\event}[4]{
+    \bf{#1} \tabto{2in} \texttt{#2} \tabto{3in} \normalfont
+    \ifx&#3& \else
+       \emph{ {#3},}
+    \fi
+    ``{#4}''
+}
+\newcommand{\contact}[5]{
+    \centerline{ \large \texttt{ #1 $\bullet$ #2 $\bullet$ #3 }}
+    \centerline{ \emph{ #4  $\bullet$ R\'{e}sum\'{e} current as of \today}}
+}
+\newcommand{\skill}[2]{
+    \textbf{#1} \tabto{2.5in} #2
+}
+% Write C++ all fancy-like
+% http://www.parashift.com/c++-faq-lite/latex-macros.html
+\newcommand{\CPP}{
+    C\hspace{-.05em}\raisebox{.4ex}{\tiny\bf +}\hspace{-.10em}\raisebox{.4ex}{\tiny\bf +}
+}
+
+% alternative to \skill, for extended lists of skills
+% columnsep can be used here to unbalance the columns, with a negative number
+% increasing the size of the right column versus the left.  '0cm' or equivalent
+% will keep them balanced
+%
+% params: columnsep, heading, individual skills
+\newcommand{\skillz}[3]{
+    \vspace{-0.5cm}
+    \squish
+    \setlength{\columnsep}{#1}
+    \begin{multicols}{2}
+    \squish
+    \RaggedRight % force to the hard left of the column
+    \small
+    \textbf{#2}
+    \columnbreak
+    \squish
+    \justify
+    \small
+    #3
+    \end{multicols}
+    \vspace{-0.2cm} % yes, really necessary to keep this self-contained
+}
+
+% based on https://tex.stackexchange.com/a/148803
+% intended to increase readability of longer entries under 'experience'
+% params: indent/margin, item separation, top separation
+\newenvironment{hangingparlist}[3]
+    {\begin{list}
+        {}
+        {\setlength{\itemindent}{-#1}%%
+        \setlength{\leftmargin}{#1}%%
+        \setlength{\itemsep}{#2}%%
+        \setlength{\parsep}{#2}%%
+        \setlength{\topsep}{#3}%%
+        }
+    \setlength{\parindent}{}%%
+    \item[]
+    }
+    {\end{list}}
+
+% Projects/Contributions
+% params: name, optional website, description
+\newcommand{\project}[3]{
+    \begin{description}
+        \setlength{\parsep}{1em}
+        \ifx&#2&
+            \item[#1] --- #3
+        \else
+            \item[#1]\emph{#2} --- #3
+        \fi
+    \end{description}
+}

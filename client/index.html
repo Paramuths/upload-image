@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Paramuth's File Controller
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <center>
+            <div class="main">
+                <form id="form">
+                    <input type="file" id="uploaded-file" onchange="successfullyUpload()">
+                    <label for="uploaded-file" id="upload">Click Here to Upload Image</label>
+                    <button type="submit" id="submit">Click Here to Submit</button>
+                </form>
+                <h1 id="uploaded-text">Haha</h1>
+            </div>
+            <div class="display">
+                <img id="image" src="images/no-image.png">
+            </div>
+        </center>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

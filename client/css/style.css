@@ -1,0 +1,77 @@
+body{
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.main{
+    position: absolute;
+    top: 17%;
+    left: 30%;
+    width: 460px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    padding: 40px;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: #ffffff;
+    border-radius: 12px;
+    padding-top: 80px;
+}
+
+#uploaded-file{
+    display: none;
+}
+
+#upload{
+    position: relative;
+    top:-20px;
+    padding-left: 93px;
+    padding-right: 93px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#submit{
+    position: relative;
+    top:25px;
+
+}
+
+#upload, #submit{
+    width: 435px;
+    height: 60px;
+    text-align: center;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid #ffffff;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 255, 0.5);
+    color: #000;
+    transition: .5s all;
+}
+
+#upload:hover, #submit:hover{
+    cursor: pointer;
+    background-color: #00ff00;
+}
+
+.display{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    width: 500px;
+    height: 280px;
+    border: 2px solid #ffffff;
+    padding: 20px;
+    background-color: rgba(255, 255, 0, 0.5);
+    color: #ffffff;
+    border-radius: 12px;
+}
+#image{
+    max-height: 100%;
+}
+#uploaded-text{
+    display: none;
+}
