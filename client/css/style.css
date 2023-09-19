@@ -70,7 +70,8 @@ body{
     border-radius: 12px;
 }
 #image{
-    max-height: 100%;
+    height: 100%;
+    max-width: 500px;
 }
 #uploaded-text{
     display: none;

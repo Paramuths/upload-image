@@ -9,6 +9,6 @@ $ node server/server.js
 ## Client
 to connect to the server, for now, open\
 ```shell
-$ open ./client/index.html
+$ open ./client/html/index.html
 ```
 
