@@ -1,13 +1,13 @@
 # upload-image
-client-server that receive an uploaded image and response a modified image
+a Client-Server that receives an uploaded image and responds a modified image
 
 ## Server
-to run server on localhost, run the command\
+to start a server on your localhost, run the following command:
 ```shell
 $ node server/server.js
 ```
 ## Client
-to connect to the server, for now, open\
+to connect to the server, run the following command:
 ```shell
 $ open ./client/html/index.html
 ```
